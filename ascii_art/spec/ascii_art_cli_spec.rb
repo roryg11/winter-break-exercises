@@ -12,6 +12,8 @@ describe AsciiArt do
 
     expect(output).to include("What character do you want to use?")
   end
-  it "asks the user how many rows they would like to use"
+  it "asks the user how many rows they would like to use" do
+    expect(output).to include("How many rows do you want to use?")
+  end
   it "outputs the appropriate triangle according to user specifications"
 end
