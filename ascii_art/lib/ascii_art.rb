@@ -23,3 +23,7 @@ end
 
 # reverse for spaces
 # * count + (count - 1)
+
+art = AsciiArt.new
+
+puts art.pyramid
