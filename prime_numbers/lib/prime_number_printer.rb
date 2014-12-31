@@ -1,5 +1,6 @@
 def prime_number_printer(max)
   num_range = (1..(max.to_i)).to_a.reverse
+  num_range.delete_if {|x| x > 2 && x.even?}
   not_prime = []
   first_index = 0
   while first_index < (num_range.length - 1)
