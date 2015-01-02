@@ -7,7 +7,7 @@ class Game
   end
 
   def directions
-    "Classic Rock Paper Scissors \n
+    puts "Classic Rock Paper Scissors \n
     Rock beats Scissors, Scissors beats Paper and Paper beats Rock
     Throw out your chosen symbol and the computer will play against you. \n
     Ready to Play?"
@@ -29,11 +29,11 @@ class Game
   def round_winner
 
     if @user_turn.downcase == "rock" && @comp_turn.downcase == "scissors"
-      "user wins!"
+      "You win!"
     elsif @user_turn.downcase == "paper" && @comp_turn.downcase == "rock"
-      "user wins!"
+      "You win!"
     elsif @user_turn.downcase == "scissors" && @comp_turn.downcase == "paper"
-      "user wins!"
+      "You win!"
     elsif @user_turn.downcase == "rock" && @comp_turn.downcase == "paper"
       "computer wins!"
     elsif @user_turn.downcase == "paper" && @comp_turn.downcase == "scissors"
@@ -46,9 +46,9 @@ class Game
   end
 
   def run
-    directions
+    self.directions
 
-    puts "Please type your chosen sign"
+    puts "Rock, Paper, Scissors shoot..."
 
     sign = gets.chomp
     user_input(sign)
@@ -59,7 +59,3 @@ class Game
 
   end
 end
-
-game = Game.new
-
-game.run
