@@ -21,14 +21,16 @@ class MultiplicationTable
   def terminal_output
     line_width = 40
     table_header = table[0]
+
     puts "Multiplication Table: "
     print "   "
+
     table_header.each do |num|
         print num.to_s.ljust(line_width/(table_header.length))
     end
+
     print "\n\n"
 
-    #gives an array of index numers
     @table.each do |row|
       print "#{row[0]}| "
       row.each do |num|
@@ -39,6 +41,6 @@ class MultiplicationTable
   end
 end
 
-my_table = MultiplicationTable.new(5, 4)
+my_table = MultiplicationTable.new(9, 9)
 
-print my_table.terminal_output
+my_table.terminal_output
