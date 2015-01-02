@@ -15,5 +15,13 @@ describe MultiplicationTable do
     expect(new_table.table).to eq(expected)
   end
 
+  it "#terminal_output generates a formatted table" do
+    new_table = MultiplicationTable.new(5, 4)
+
+    expected = ""
+
+    expect(new_table.terminal_output).to eq(expected)
+  end
+
 
 end

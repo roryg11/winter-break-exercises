@@ -1,5 +1,5 @@
 class MultiplicationTable
-  attr_reader :rows, :columns
+  attr_reader :rows, :columns, :table
 
   def initialize(rows, columns)
     @rows = (1..(rows.to_i)).to_a
@@ -19,9 +19,26 @@ class MultiplicationTable
   end
 
   def terminal_output
+    line_width = 40
+    table_header = table[0]
+    puts "Multiplication Table: "
+    print "   "
+    table_header.each do |num|
+        print num.to_s.ljust(line_width/(table_header.length))
+    end
+    print "\n\n"
 
-
+    #gives an array of index numers
+    @table.each do |row|
+      print "#{row[0]}| "
+      row.each do |num|
+        print num.to_s.ljust(line_width/(row.length))
+      end
+      print "\n"
+    end
   end
-
-
 end
+
+my_table = MultiplicationTable.new(5, 4)
+
+print my_table.terminal_output
