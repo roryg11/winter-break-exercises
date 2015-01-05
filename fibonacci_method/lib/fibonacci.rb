@@ -1,11 +1,16 @@
-def fibonacci(length)
-  array_length = length.to_i
-  new_array = [0, 1]
-  start = 0
+class Fibonacci
+  attr_accessor :array, :length
 
-  while new_array.length < array_length
-    new_array.push(new_array[-2] + new_array[-1])
+  def initialize(length)
+    @length = length.to_i
+    @array = [0, 1]
   end
 
-  new_array
+  def generate
+    while array.length < length
+      array.push(array[-2] + array[-1])
+    end
+    array
+  end
+
 end
